@@ -983,7 +983,7 @@
     </section>
 
     <div class="hint-band" id="hintBand">
-      <div><span>36 preguntas</span> con distractores cercanos y explicaciones.</div>
+      <div><span>120 preguntas</span> con distractores cercanos y explicaciones.</div>
       <div><span>Temas:</span> usabilidad, producto, proceso, SQuaRE y deuda tecnica.</div>
     </div>
 
@@ -1034,6 +1034,7 @@
   </main>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="questions-2p-extra.js"></script>
   <script>
     const QUESTIONS = [
       {
@@ -1480,6 +1481,10 @@
       selected: null,
       review: []
     };
+
+    if (Array.isArray(window.EXTRA_QUESTIONS_2P)) {
+      QUESTIONS.push(...window.EXTRA_QUESTIONS_2P);
+    }
 
     const topics = ["Todos", ...Array.from(new Set(QUESTIONS.map((q) => q.topic)))];
     const letters = ["A", "B", "C", "D"];
