@@ -983,7 +983,7 @@
     </section>
 
     <div class="hint-band" id="hintBand">
-      <div><span>120 preguntas</span> con distractores cercanos y explicaciones.</div>
+      <div><span>187 preguntas</span> ponderadas por cantidad de material.</div>
       <div><span>Temas:</span> usabilidad, producto, proceso, SQuaRE y deuda tecnica.</div>
     </div>
 
@@ -1035,6 +1035,7 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="questions-2p-extra.js"></script>
+  <script src="questions-2p-weighted.js"></script>
   <script>
     const QUESTIONS = [
       {
@@ -1484,6 +1485,10 @@
 
     if (Array.isArray(window.EXTRA_QUESTIONS_2P)) {
       QUESTIONS.push(...window.EXTRA_QUESTIONS_2P);
+    }
+
+    if (Array.isArray(window.WEIGHTED_QUESTIONS_2P)) {
+      QUESTIONS.push(...window.WEIGHTED_QUESTIONS_2P);
     }
 
     const topics = ["Todos", ...Array.from(new Set(QUESTIONS.map((q) => q.topic)))];
